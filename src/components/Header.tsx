@@ -125,7 +125,7 @@ const Header: React.FC = () => {
                         {t('nav.home')}
                     </a>
                         <a
-                            href="/about"
+                            href="about"
                             className="block px-3 py-2 rounded-md text-base font-medium text-[#0B3B25] hover:bg-gray-100"
                             onClick={() => setIsOpen(false)}
                         >

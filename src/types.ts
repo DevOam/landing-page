@@ -34,7 +34,7 @@ export interface ITestimonial {
     role: string;
     message?: string;
     messageKey?: string;
-    avatar: string;
+    avatar?: string;  // Made optional with ?
 }
 
 export interface IStats {

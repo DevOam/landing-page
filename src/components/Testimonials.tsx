@@ -3,9 +3,30 @@
 import React from 'react';
 import { testimonials } from "@/data/testimonials";
 import { useLanguage } from "@/contexts/LanguageContext";
-import Image from "next/image";
-import { FaUser } from "react-icons/fa";
-import { FaUserAlt } from "react-icons/fa";
+import { FaUser, FaUserAlt, FaUserCircle, FaUserTie, FaUserAstronaut } from "react-icons/fa";
+
+const getBackgroundColor = (index: number): string => {
+    const colors = [
+        '#E3F2FD', // Light blue
+        '#F3E5F5', // Light purple
+        '#E8F5E9', // Light green
+    ];
+    return colors[index % colors.length];
+};
+
+const getUserIcon = (index: number): JSX.Element => {
+    const iconSize = '1.75rem';
+    const iconColor = '#0a3420'; // Dark green to match the theme
+    
+    // Different user icons for variety
+    const icons = [
+        <FaUserCircle key="user1" className="w-full h-full" style={{ color: iconColor, fontSize: iconSize }} />,
+        <FaUserTie key="user2" className="w-full h-full" style={{ color: iconColor, fontSize: iconSize }} />,
+        <FaUserAstronaut key="user3" className="w-full h-full" style={{ color: iconColor, fontSize: iconSize }} />,
+    ];
+    
+    return icons[index % icons.length];
+};
 
 const Testimonials: React.FC = () => {
     const { t } = useLanguage();
@@ -17,23 +38,12 @@ const Testimonials: React.FC = () => {
                     className=""
                 >
                     <div className="flex items-center mb-4 w-full justify-center lg:justify-start">
-                        <div className="w-[50px] h-[50px] rounded-full shadow-md flex items-center justify-center bg-white border-2 overflow-hidden" style={{ borderColor: '#0a3420' }}>
-                            {testimonial.avatar ? (
-                                <Image 
-                                    src={testimonial.avatar} 
-                                    alt={testimonial.name} 
-                                    width={50} 
-                                    height={50} 
-                                    className="w-full h-full object-cover"
-                                    unoptimized
-                                />
-                            ) : index === 0 ? (
-                                <FaUserAlt className="w-6 h-6 text-[#0a3420]" />
-                            ) : index === 1 ? (
-                                <FaUser className="w-6 h-6 text-[#0a3420]" />
-                            ) : (
-                                <FaUserAlt className="w-6 h-6 text-[#0a3420]" />
-                            )}
+                        <div className="w-[50px] h-[50px] rounded-full shadow-md flex items-center justify-center overflow-hidden" 
+                                 style={{ 
+                                    backgroundColor: getBackgroundColor(index),
+                                    border: '2px solid #0a3420'
+                                 }}>
+                            {getUserIcon(index)}
                         </div>
                         <div className="ml-4">
                             <h3 className="font-bold text-[18px] leading-[28px] font-[MadaniArabic-SemiBold]" style={{ color: '#0B3B25' }}>

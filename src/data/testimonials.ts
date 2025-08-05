@@ -5,19 +5,16 @@ export const testimonials: ITestimonial[] = [
     {
         name: 'Zineb A.',
         role: 'Paris',
-        messageKey: 'testimonial1.message',
-        avatar: './images/testimonial-1.webp',
+        messageKey: 'testimonial1.message'
     },
     {
         name: 'Mohamed M.',
         role: 'Casablanca',
-        messageKey: 'testimonial2.message',
-        avatar: './images/testimonial-2.webp',
+        messageKey: 'testimonial2.message'
     },
     {
         name: 'Fatima C.',
         role: 'Mohammedia',
-        messageKey: 'testimonial3.message',
-        avatar: './images/testimonial-3.webp',
+        messageKey: 'testimonial3.message'
     },
 ];
