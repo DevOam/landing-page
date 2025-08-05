@@ -3,7 +3,7 @@
 import React from 'react';
 import { testimonials } from "@/data/testimonials";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { FaUser, FaUserAlt, FaUserCircle, FaUserTie, FaUserAstronaut } from "react-icons/fa";
+import { FaUserCircle, FaUserTie, FaUserAstronaut } from "react-icons/fa";
 
 const getBackgroundColor = (index: number): string => {
     const colors = [
